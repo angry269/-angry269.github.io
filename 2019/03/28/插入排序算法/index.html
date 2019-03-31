@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>插入排序算法 | 克己</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#include #includeusing namespace std;int i,j,m,n,y,x;class paixu//定义排序的类{private:    int qu[10000];public://声名函数    void sort();    bool less(int a,int b);    int swap(int c,int d);    void input(int">
+  <meta name="description" content="具体实现代码如下： #include #includeusing namespace std;int i,j,m,n,y,x;class paixu//定义排序的类{private:    int qu[10000];public://声名函数    void sort();    bool less(int a,int b);    int swap(int c,int d);    void">
 <meta name="keywords" content="排序算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="插入排序算法">
 <meta property="og:url" content="http://yoursite.com/2019/03/28/插入排序算法/index.html">
 <meta property="og:site_name" content="克己">
-<meta property="og:description" content="#include #includeusing namespace std;int i,j,m,n,y,x;class paixu//定义排序的类{private:    int qu[10000];public://声名函数    void sort();    bool less(int a,int b);    int swap(int c,int d);    void input(int">
+<meta property="og:description" content="具体实现代码如下： #include #includeusing namespace std;int i,j,m,n,y,x;class paixu//定义排序的类{private:    int qu[10000];public://声名函数    void sort();    bool less(int a,int b);    int swap(int c,int d);    void">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-30T07:52:39.884Z">
+<meta property="og:updated_time" content="2019-03-30T08:05:00.027Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="插入排序算法">
-<meta name="twitter:description" content="#include #includeusing namespace std;int i,j,m,n,y,x;class paixu//定义排序的类{private:    int qu[10000];public://声名函数    void sort();    bool less(int a,int b);    int swap(int c,int d);    void input(int">
+<meta name="twitter:description" content="具体实现代码如下： #include #includeusing namespace std;int i,j,m,n,y,x;class paixu//定义排序的类{private:    int qu[10000];public://声名函数    void sort();    bool less(int a,int b);    int swap(int c,int d);    void">
   
     <link rel="alternative" href="/atom.xml" title="克己" type="application/atom+xml">
   
@@ -179,7 +179,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#include<iostream></iostream></p>
+        <p>具体实现代码如下<br>：</p>
+<p>#include<iostream></iostream></p>
 <p>#include<vector><br>using namespace std;<br>int i,j,m,n,y,x;<br>class paixu//定义排序的类<br>{<br>private:<br>    int qu[10000];<br>public://声名函数<br>    void sort();<br>    bool less(int a,int b);<br>    int swap(int c,int d);<br>    void input(int m);<br>    void show(int m);<br>};<br>void paixu::input(int m)<br>{<br>    for(i=0; i&lt;m; i++)<br>    {<br>        cout&lt;&lt;”输入数组元素i”&lt;&lt;i&lt;&lt;endl;<br>        cin&gt;&gt;qu[i];<br>    }<br>}//执行输入操作<br>void paixu:: sort()<br>{<br>    for(i=1; i&lt;m; i++)<br>    {<br>        for(j=i; j&gt;0; j–)<br>        {<br>            if(less(qu[j],qu[j-1]))<br>            swap(j,j-1);<br>        }<br>    }<br>}//排序主函数<br>bool paixu::less(int a,int b)<br>{<br>    if(a&lt;=b)<br>        return true;<br>    return false;<br>}<br>int paixu::swap(int a,int b)<br>{<br>    int t=qu[a];<br>    qu[a]=qu[b];<br>    qu[b]=t;<br>    return 0;<br>}//交换操作<br>void paixu::show(int m)<br>{<br>    for(i=0;i&lt;m;i++)<br>        cout&lt;&lt;qu[i]&lt;&lt;” “;<br>    cout&lt;&lt;endl;<br>}//输出函数<br>int main()<br>{<br>    paixu pa;<br>    cout&lt;&lt;”输入数组长度”&lt;&lt;endl;<br>    cin&gt;&gt;m;<br>    cout&lt;&lt;”输入数组元素”&lt;&lt;endl;<br>        pa.input(m);<br>        pa.sort();<br>        pa.show(m);<br>    return 0;<br>}</vector></p>
 
       
@@ -413,11 +414,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数据结构 链表 c++</a>
+                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
+                <a href="javascript:void(0)" class="js-tag color2">数据结构 链表 c++</a>
               </li>
             
             <div class="clearfix"></div>
