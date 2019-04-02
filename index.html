@@ -160,6 +160,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-快速排序的代码实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/02/快速排序的代码实现/">快速排序的代码实现</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/02/快速排序的代码实现/" class="archive-article-date">
+  	<time datetime="2019-04-02T12:18:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>快速排序的代码实现<br>利用c++实现<br>//利用递归实现快速排序</p>
+<p>#include<iostream><br>using namespace std;<br>class date<br>{<br>private:<br>    int a[10000];<br>    int l;<br>    void qsort(int lo,int hi);<br>public:<br>    void input();<br>    void show();<br>    void sort();<br>    void swap(int a,int b);<br>    int partition(int a,int b);<br>};<br>int main()<br>{<br>    date da1;<br>    da1.input();<br>    da1.show();<br>    da1.sort();<br>    da1.show();<br>}<br>void date::input()<br>{<br>    cout&lt;&lt;”请输入数组长度”&lt;&lt;endl;<br>    cin&gt;&gt;l;<br>    cout&lt;&lt;”请输入数组元素”&lt;&lt;endl;<br>    for(int i=0; i&lt;l; i++)<br>        cin&gt;&gt;a[i];<br>}<br>void date::show()<br>{<br>    cout&lt;&lt;”当前数组为：”&lt;&lt;endl;<br>    for(int i=0; i&lt;l; i++)<br>        cout&lt;&lt;a[i]&lt;&lt;” “;<br>    cout&lt;&lt;endl;<br>}<br>//无法在主函数中调用数组长l<br>void date::sort()<br>{<br>    qsort(0,l-1);<br>}<br>void date::swap(int ai,int b)<br>{<br>    int t=a[ai];<br>    a[ai]=a[b];<br>    a[b]=t;<br>}<br>int date::partition(int lo,int hi)<br>{<br>    if(lo&gt;=hi)<br>        return 0;<br>    int v=a[lo];<br>    int i=lo/<em>左指针向右移动寻找大于v的数</em>/;<br>    int j=hi+1;/<em>右指针向左移动寻找小于v的数</em>/<br>    while(1)<br>    {<br>        /<em>向右移动寻找大于v的数</em>/<br>        while(a[++i]&lt;v)<br>            if(i==hi)<br>                break;<br>        /<em>向左移动寻找小于v的数</em>/<br>        while(v&lt;a[–j])<br>            if(j==lo)<br>                break;<br>        if(i&gt;=j)<br>            break;<br>            /<em>确保v的左边都小于v右边都大于v</em>/<br>        swap(i,j);<br>    }<br>    //确定v的位置<br>    swap(lo,j);<br>    show();//显示排序轨迹<br>    return j;<br>}<br>//主排序函数<br>void date::qsort(int lo,int hi)<br>{<br>    if(lo&gt;=hi)<br>        return ;<br>    int j=partition(lo,hi);<br>    qsort(lo,j);<br>    qsort(j+1,hi);</iostream></p>
+<p>}</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/02/快速排序的代码实现/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-插入排序算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

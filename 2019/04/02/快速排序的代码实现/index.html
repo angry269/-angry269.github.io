@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 克己</title>
+  <title>快速排序的代码实现 | 克己</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习记录">
+  <meta name="description" content="快速排序的代码实现利用c++实现//利用递归实现快速排序 #includeusing namespace std;class date{private:    int a[10000];    int l;    void qsort(int lo,int hi);public:    void input();    void show();    void sort();    void sw">
 <meta name="keywords" content="学习 c++ c git">
-<meta property="og:type" content="website">
-<meta property="og:title" content="克己">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快速排序的代码实现">
+<meta property="og:url" content="http://yoursite.com/2019/04/02/快速排序的代码实现/index.html">
 <meta property="og:site_name" content="克己">
-<meta property="og:description" content="学习记录">
+<meta property="og:description" content="快速排序的代码实现利用c++实现//利用递归实现快速排序 #includeusing namespace std;class date{private:    int a[10000];    int l;    void qsort(int lo,int hi);public:    void input();    void show();    void sort();    void sw">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-02T12:19:40.580Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="克己">
-<meta name="twitter:description" content="学习记录">
+<meta name="twitter:title" content="快速排序的代码实现">
+<meta name="twitter:description" content="快速排序的代码实现利用c++实现//利用递归实现快速排序 #includeusing namespace std;class date{private:    int a[10000];    int l;    void qsort(int lo,int hi);public:    void input();    void show();    void sort();    void sw">
   
     <link rel="alternative" href="/atom.xml" title="克己" type="application/atom+xml">
   
@@ -158,173 +159,158 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-快速排序的代码实现" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      快速排序的代码实现
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/02/快速排序的代码实现/" class="archive-article-date">
+
+        
+        <a href="/2019/04/02/快速排序的代码实现/" class="archive-article-date">
   	<time datetime="2019-04-02T12:18:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/02/快速排序的代码实现/">快速排序的代码实现</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>快速排序的代码实现<br>利用c++实现<br>//利用递归实现快速排序</p>
+<p>#include<iostream><br>using namespace std;<br>class date<br>{<br>private:<br>    int a[10000];<br>    int l;<br>    void qsort(int lo,int hi);<br>public:<br>    void input();<br>    void show();<br>    void sort();<br>    void swap(int a,int b);<br>    int partition(int a,int b);<br>};<br>int main()<br>{<br>    date da1;<br>    da1.input();<br>    da1.show();<br>    da1.sort();<br>    da1.show();<br>}<br>void date::input()<br>{<br>    cout&lt;&lt;”请输入数组长度”&lt;&lt;endl;<br>    cin&gt;&gt;l;<br>    cout&lt;&lt;”请输入数组元素”&lt;&lt;endl;<br>    for(int i=0; i&lt;l; i++)<br>        cin&gt;&gt;a[i];<br>}<br>void date::show()<br>{<br>    cout&lt;&lt;”当前数组为：”&lt;&lt;endl;<br>    for(int i=0; i&lt;l; i++)<br>        cout&lt;&lt;a[i]&lt;&lt;” “;<br>    cout&lt;&lt;endl;<br>}<br>//无法在主函数中调用数组长l<br>void date::sort()<br>{<br>    qsort(0,l-1);<br>}<br>void date::swap(int ai,int b)<br>{<br>    int t=a[ai];<br>    a[ai]=a[b];<br>    a[b]=t;<br>}<br>int date::partition(int lo,int hi)<br>{<br>    if(lo&gt;=hi)<br>        return 0;<br>    int v=a[lo];<br>    int i=lo/<em>左指针向右移动寻找大于v的数</em>/;<br>    int j=hi+1;/<em>右指针向左移动寻找小于v的数</em>/<br>    while(1)<br>    {<br>        /<em>向右移动寻找大于v的数</em>/<br>        while(a[++i]&lt;v)<br>            if(i==hi)<br>                break;<br>        /<em>向左移动寻找小于v的数</em>/<br>        while(v&lt;a[–j])<br>            if(j==lo)<br>                break;<br>        if(i&gt;=j)<br>            break;<br>            /<em>确保v的左边都小于v右边都大于v</em>/<br>        swap(i,j);<br>    }<br>    //确定v的位置<br>    swap(lo,j);<br>    show();//显示排序轨迹<br>    return j;<br>}<br>//主排序函数<br>void date::qsort(int lo,int hi)<br>{<br>    if(lo&gt;=hi)<br>        return ;<br>    int j=partition(lo,hi);<br>    qsort(lo,j);<br>    qsort(j+1,hi);</iostream></p>
+<p>}</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/02/快速排序的代码实现/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/28/插入排序算法/" class="archive-article-date">
-  	<time datetime="2019-03-28T12:36:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/28/插入排序算法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">插入排序算法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/28/插入排序算法/">插入排序算法</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">排序算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/24/链表的增删改查/" class="archive-article-date">
-  	<time datetime="2019-03-24T07:44:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/24/链表的增删改查/">链表的增删改查</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">数据结构 链表 c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/23/我的第一篇文章/" class="archive-article-date">
-  	<time datetime="2019-03-23T03:13:19.794Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-23</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/23/hello-world/" class="archive-article-date">
-  	<time datetime="2019-03-23T02:58:31.459Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/23/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -347,8 +333,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
