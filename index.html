@@ -225,6 +225,108 @@
 
 
   
+    <article id="post-归并排序实现代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/31/归并排序实现代码/">归并排序实现代码</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/31/归并排序实现代码/" class="archive-article-date">
+  	<time datetime="2019-03-31T11:54:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由顶到底的归并排序（使用递归）：</p>
+<p>#include<iostream><br>using namespace std;<br>//类的定义<br>class gb<br>{<br>private:<br>    int a[10000];<br>    int b[10000];<br>    int n;<br>    int psort(int l,int h);<br>public:<br>    void input();<br>    void  show();<br>    int merge(int l,int m,int h);<br>    void sort();<br>    bool less(int i,int j);<br>};<br>//创建数组<br>void gb::input()<br>{<br>    cout&lt;&lt;”请输入数组长度：”&lt;&lt;endl;<br>    cin&gt;&gt;n;<br>    cout&lt;&lt;”请输入数组元素：”&lt;&lt;endl;<br>    for(int i=0; i&lt;n; i++)<br>        cin&gt;&gt;a[i];<br>}<br>//输出数组<br>void gb::show()<br>{<br>    cout&lt;&lt;”当前数组为：”&lt;&lt;endl;<br>    for(int i=0; i&lt;n; i++)<br>        cout&lt;&lt;a[i]&lt;&lt;” “;<br>    cout&lt;&lt;endl;<br>}<br>//判断大小<br>bool gb::less(int i,int j)<br>{<br>    if(i&lt;=j)<br>        return true;<br>    return false;<br>}<br>//原地归并<br>int gb::merge(int l,int m,int h)<br>{<br>    int i=l,j=m+1;<br>    for(int k=l; k&lt;=h; k++)<br>    {<br>        b[k]=a[k];<br>    }<br>    for(int k=l; k&lt;=h; k++)<br>    {<br>        if(i&gt;m)<br>        {<br>            a[k]=b[j];<br>            j++;<br>        }<br>        else if(j&gt;h)<br>        {<br>            a[k]=b[i];<br>            i++;<br>        }</iostream></p>
+<pre><code>    else if(less(b[j],b[i]))
+    {
+        a[k]=b[j];
+        j++;
+    }
+    else
+    {
+        a[k]=b[i];
+        i++;
+    }
+}
+return 0;
+</code></pre><p>}<br>//实现递归归并<br>int gb::psort(int l,int h)<br>{<br>    if(l&gt;=h)<br>        return 0;<br>    int m=l+(h-l)/2;<br>    psort(l,m);<br>    psort(m+1,h);<br>    if(a[m]&gt;a[m+1])//此时数组有序无需归并<br>    merge(l,m,h);<br>}<br>//执行排序<br>void gb::sort()<br>{<br>    psort(0,n-1);//因为n封装在类中无法从主函数中访问<br>}<br>int main()<br>{<br>    gb gb_1;<br>    gb_1.input();<br>    gb_1.show();<br>    gb_1.sort();<br>    gb_1.show();<br>    return 0;<br>}<br>由底到顶的归并排序：<br>//不使用递归的归并排序</p>
+<p>#include<iostream><br>using namespace std;<br>//类的定义<br>class gb<br>{<br>private:<br>    int a[10000];<br>    int b[10000];<br>    int n;<br>public:<br>    void input();<br>    void  show();<br>    int merge(int l,int m,int h);<br>    void sort();<br>    bool less(int i,int j);<br>    int min(int a,int b);<br>};<br>//创建数组<br>void gb::input()<br>{<br>    cout&lt;&lt;”请输入数组长度：”&lt;&lt;endl;<br>    cin&gt;&gt;n;<br>    cout&lt;&lt;”请输入数组元素：”&lt;&lt;endl;<br>    for(int i=0; i&lt;n; i++)<br>        cin&gt;&gt;a[i];<br>}<br>//输出数组<br>void gb::show()<br>{<br>    cout&lt;&lt;”当前数组为：”&lt;&lt;endl;<br>    for(int i=0; i&lt;n; i++)<br>        cout&lt;&lt;a[i]&lt;&lt;” “;<br>    cout&lt;&lt;endl;<br>}<br>//判断大小<br>bool gb::less(int i,int j)<br>{<br>    if(i&lt;=j)<br>        return true;<br>    return false;<br>}<br>//原地归并<br>int gb::merge(int l,int m,int h)<br>{<br>    int i=l,j=m+1;<br>    for(int k=l; k&lt;=h; k++)<br>    {<br>        b[k]=a[k];<br>    }<br>    for(int k=l; k&lt;=h; k++)<br>    {<br>        if(i&gt;m)<br>        {<br>            a[k]=b[j];<br>            j++;<br>        }<br>        else if(j&gt;h)<br>        {<br>            a[k]=b[i];<br>            i++;<br>        }</iostream></p>
+<pre><code>    else if(less(b[j],b[i]))
+    {
+        a[k]=b[j];
+        j++;
+    }
+    else
+    {
+        a[k]=b[i];
+        i++;
+    }
+}
+return 0;
+</code></pre><p>}<br>//实现递归归并<br>void gb::sort()<br>{<br>  for(int sz=1;sz&lt;n;sz=sz<em>2)<br>  {<br>      for(int l=0;l&lt;n-sz;l=l+sz</em>2)<br>      {<br>          merge(l,l+sz-1,min(l+sz<em>2-1,n-1)//防止l+sz</em>2超出数组长度);<br>      }<br>  }<br>}<br>int gb::min(int a,int b)<br>{<br>    if(a&lt;b)<br>        return a;<br>    return b;<br>}<br>int main()<br>{<br>    gb gb_1;<br>    gb_1.input();<br>    gb_1.show();<br>    gb_1.sort();<br>    gb_1.show();<br>    return 0;<br>}<br>1.自底向上的归并排序较为适合链表。<br>2.时间复杂度为：NlgN</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/31/归并排序实现代码/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-插入排序算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -596,11 +698,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数据结构 链表 c++</a>
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">数据结构 链表 c++</a>
               </li>
             
             <div class="clearfix"></div>
