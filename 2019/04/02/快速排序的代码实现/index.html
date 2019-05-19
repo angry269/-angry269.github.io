@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>快速排序的代码实现 | 克己</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="快速排序的代码实现利用c++实现//利用递归实现快速排序 #includeusing namespace std;class date{private:    int a[10000];    int l;    void qsort(int lo,int hi);public:    void input();    void show();    void sort();    void sw">
+  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889快速排序的代码实现利用c++实现//利用递归实现快速排序#in">
 <meta name="keywords" content="学习 c++ c git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速排序的代码实现">
 <meta property="og:url" content="http://yoursite.com/2019/04/02/快速排序的代码实现/index.html">
 <meta property="og:site_name" content="克己">
-<meta property="og:description" content="快速排序的代码实现利用c++实现//利用递归实现快速排序 #includeusing namespace std;class date{private:    int a[10000];    int l;    void qsort(int lo,int hi);public:    void input();    void show();    void sort();    void sw">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889快速排序的代码实现利用c++实现//利用递归实现快速排序#in">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-02T12:19:40.580Z">
+<meta property="og:updated_time" content="2019-05-19T09:32:02.914Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速排序的代码实现">
-<meta name="twitter:description" content="快速排序的代码实现利用c++实现//利用递归实现快速排序 #includeusing namespace std;class date{private:    int a[10000];    int l;    void qsort(int lo,int hi);public:    void input();    void show();    void sort();    void sw">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889快速排序的代码实现利用c++实现//利用递归实现快速排序#in">
   
     <link rel="alternative" href="/atom.xml" title="克己" type="application/atom+xml">
   
@@ -179,9 +179,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>快速排序的代码实现<br>利用c++实现<br>//利用递归实现快速排序</p>
-<p>#include<iostream><br>using namespace std;<br>class date<br>{<br>private:<br>    int a[10000];<br>    int l;<br>    void qsort(int lo,int hi);<br>public:<br>    void input();<br>    void show();<br>    void sort();<br>    void swap(int a,int b);<br>    int partition(int a,int b);<br>};<br>int main()<br>{<br>    date da1;<br>    da1.input();<br>    da1.show();<br>    da1.sort();<br>    da1.show();<br>}<br>void date::input()<br>{<br>    cout&lt;&lt;”请输入数组长度”&lt;&lt;endl;<br>    cin&gt;&gt;l;<br>    cout&lt;&lt;”请输入数组元素”&lt;&lt;endl;<br>    for(int i=0; i&lt;l; i++)<br>        cin&gt;&gt;a[i];<br>}<br>void date::show()<br>{<br>    cout&lt;&lt;”当前数组为：”&lt;&lt;endl;<br>    for(int i=0; i&lt;l; i++)<br>        cout&lt;&lt;a[i]&lt;&lt;” “;<br>    cout&lt;&lt;endl;<br>}<br>//无法在主函数中调用数组长l<br>void date::sort()<br>{<br>    qsort(0,l-1);<br>}<br>void date::swap(int ai,int b)<br>{<br>    int t=a[ai];<br>    a[ai]=a[b];<br>    a[b]=t;<br>}<br>int date::partition(int lo,int hi)<br>{<br>    if(lo&gt;=hi)<br>        return 0;<br>    int v=a[lo];<br>    int i=lo/<em>左指针向右移动寻找大于v的数</em>/;<br>    int j=hi+1;/<em>右指针向左移动寻找小于v的数</em>/<br>    while(1)<br>    {<br>        /<em>向右移动寻找大于v的数</em>/<br>        while(a[++i]&lt;v)<br>            if(i==hi)<br>                break;<br>        /<em>向左移动寻找小于v的数</em>/<br>        while(v&lt;a[–j])<br>            if(j==lo)<br>                break;<br>        if(i&gt;=j)<br>            break;<br>            /<em>确保v的左边都小于v右边都大于v</em>/<br>        swap(i,j);<br>    }<br>    //确定v的位置<br>    swap(lo,j);<br>    show();//显示排序轨迹<br>    return j;<br>}<br>//主排序函数<br>void date::qsort(int lo,int hi)<br>{<br>    if(lo&gt;=hi)<br>        return ;<br>    int j=partition(lo,hi);<br>    qsort(lo,j);<br>    qsort(j+1,hi);</iostream></p>
-<p>}</p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">快速排序的代码实现</span><br><span class="line">利用c++实现</span><br><span class="line">//利用递归实现快速排序</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class date</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">    int a[10000];</span><br><span class="line">    int l;</span><br><span class="line">    void qsort(int lo,int hi);</span><br><span class="line">public:</span><br><span class="line">    void input();</span><br><span class="line">    void show();</span><br><span class="line">    void sort();</span><br><span class="line">    void swap(int a,int b);</span><br><span class="line">    int partition(int a,int b);</span><br><span class="line">&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    date da1;</span><br><span class="line">    da1.input();</span><br><span class="line">    da1.show();</span><br><span class="line">    da1.sort();</span><br><span class="line">    da1.show();</span><br><span class="line">&#125;</span><br><span class="line">void date::input()</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;&quot;请输入数组长度&quot;&lt;&lt;endl;</span><br><span class="line">    cin&gt;&gt;l;</span><br><span class="line">    cout&lt;&lt;&quot;请输入数组元素&quot;&lt;&lt;endl;</span><br><span class="line">    for(int i=0; i&lt;l; i++)</span><br><span class="line">        cin&gt;&gt;a[i];</span><br><span class="line">&#125;</span><br><span class="line">void date::show()</span><br><span class="line">&#123;</span><br><span class="line">    cout&lt;&lt;&quot;当前数组为：&quot;&lt;&lt;endl;</span><br><span class="line">    for(int i=0; i&lt;l; i++)</span><br><span class="line">        cout&lt;&lt;a[i]&lt;&lt;&quot; &quot;;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">//无法在主函数中调用数组长l</span><br><span class="line">void date::sort()</span><br><span class="line">&#123;</span><br><span class="line">    qsort(0,l-1);</span><br><span class="line">&#125;</span><br><span class="line">void date::swap(int ai,int b)</span><br><span class="line">&#123;</span><br><span class="line">    int t=a[ai];</span><br><span class="line">    a[ai]=a[b];</span><br><span class="line">    a[b]=t;</span><br><span class="line">&#125;</span><br><span class="line">int date::partition(int lo,int hi)</span><br><span class="line">&#123;</span><br><span class="line">    if(lo&gt;=hi)</span><br><span class="line">        return 0;</span><br><span class="line">    int v=a[lo];</span><br><span class="line">    int i=lo/*左指针向右移动寻找大于v的数*/;</span><br><span class="line">    int j=hi+1;/*右指针向左移动寻找小于v的数*/</span><br><span class="line">    while(1)</span><br><span class="line">    &#123;</span><br><span class="line">        /*向右移动寻找大于v的数*/</span><br><span class="line">        while(a[++i]&lt;v)</span><br><span class="line">            if(i==hi)</span><br><span class="line">                break;</span><br><span class="line">        /*向左移动寻找小于v的数*/</span><br><span class="line">        while(v&lt;a[--j])</span><br><span class="line">            if(j==lo)</span><br><span class="line">                break;</span><br><span class="line">        if(i&gt;=j)</span><br><span class="line">            break;</span><br><span class="line">            /*确保v的左边都小于v右边都大于v*/</span><br><span class="line">        swap(i,j);</span><br><span class="line">    &#125;</span><br><span class="line">    //确定v的位置</span><br><span class="line">    swap(lo,j);</span><br><span class="line">    show();//显示排序轨迹</span><br><span class="line">    return j;</span><br><span class="line">&#125;</span><br><span class="line">//主排序函数</span><br><span class="line">void date::qsort(int lo,int hi)</span><br><span class="line">&#123;</span><br><span class="line">    if(lo&gt;=hi)</span><br><span class="line">        return ;</span><br><span class="line">    int j=partition(lo,hi);</span><br><span class="line">    qsort(lo,j);</span><br><span class="line">    qsort(j+1,hi);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -274,6 +272,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/04/06/希尔排序/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          希尔排序
+        
+      </div>
+    </a>
   
   
     <a href="/2019/03/31/归并排序实现代码/" id="article-nav-older" class="article-nav-link-wrap">
@@ -407,11 +414,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
+                <a href="javascript:void(0)" class="js-tag color2">数据结构 链表 c++</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">数据结构 链表 c++</a>
+                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
               </li>
             
             <div class="clearfix"></div>
